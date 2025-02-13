@@ -20,8 +20,8 @@ body {
     padding: 20px;
 }
 
-/* Common styling for both greetings */
-.greetings, .valentine-message {
+/* Common glowing text style */
+.valentine-message, .greetings {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -33,20 +33,20 @@ body {
     text-transform: uppercase;
 }
 
-/* First Greeting (MGA POGI) */
-.greetings {
+/* Top text (HAPPY VALENTINES!) */
+.valentine-message {
     font-size: 2.5rem;
+    gap: 8px;
+    margin-bottom: 10px;
+}
+
+/* Bottom text (MGA POGI) */
+.greetings {
+    font-size: 2rem;
     gap: 10px;
 }
 
-/* Second Greeting (""HAPPY VALENTINES!"") - Slightly compressed */
-.valentine-message {
-    font-size: 1.9rem;
-    gap: 4px; /* Reduce space to fit better */
-    margin-top: 10px;
-}
-
-/* Slow glowing effect */
+/* Glowing animation */
 @keyframes glow {
     0%, 100% {
         text-shadow: 0 0 12px #ff69b4, 0 0 50px #ff69b4, 0 0 100px #ff69b4;
@@ -96,13 +96,14 @@ button {
 
 /* Responsive Design */
 @media screen and (max-width: 574px) {
-    .greetings {
+    .valentine-message {
         font-size: 2rem;
+        gap: 5px;
     }
 
-    .valentine-message {
-        font-size: 1.7rem; /* Slightly smaller on very small screens */
-        gap: 3px; /* Minimize spacing further */
+    .greetings {
+        font-size: 1.8rem;
+        gap: 8px;
     }
 
     .description {
