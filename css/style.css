@@ -45,7 +45,6 @@ body {
 .greetings {
     font-size: 1.8rem;
     letter-spacing: 3px;
-    word-spacing: 10px; /* Adds space between words */
     color: #00bfff; /* Cyan Blue */
     text-shadow: 0 0 12px #00bfff, 0 0 50px #00bfff, 0 0 100px #00bfff;
     animation: glow-blue 2.5s ease-in-out infinite;
