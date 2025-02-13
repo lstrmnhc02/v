@@ -27,11 +27,10 @@
         </button>
         
     </div>
-
-    <style>
+<style>
         @keyframes heartHalo {
             0% {
-                transform: scale(0.5);
+                transform: scale(0.8);
                 opacity: 1;
             }
             50% {
@@ -46,25 +45,47 @@
 
         .heart-halo {
             position: absolute;
-            width: 50px;
-            height: 50px;
+            width: 24px;
+            height: 24px;
             background: transparent;
             border: 3px solid pink;
-            border-radius: 50%;
-            box-shadow: 0 0 10px #ff69b4, 0 0 20px #ff69b4;
+            box-shadow: 0 0 15px #ff69b4;
             animation: heartHalo 1.5s ease-out forwards;
             pointer-events: none;
-            clip-path: path("M 25 5 C 35 -10, 60 5, 25 45 C -10 5, 15 -10, 25 5");
+            transform: rotate(-45deg);
+        }
+
+        .heart-halo::before,
+        .heart-halo::after {
+            content: '';
+            position: absolute;
+            width: 24px;
+            height: 24px;
+            border: 3px solid pink;
+            box-shadow: inherit;
+            border-radius: 50%;
+        }
+
+        .heart-halo::before {
+            top: -12px;
+            left: 0;
+        }
+
+        .heart-halo::after {
+            left: 12px;
+            top: 0;
         }
     </style>
-    <script>
+
+
+   <script>
         document.addEventListener("click", function(event) {
             const heartHalo = document.createElement("div");
             heartHalo.classList.add("heart-halo");
             document.body.appendChild(heartHalo);
             
-            heartHalo.style.left = `${event.clientX - 25}px`;
-            heartHalo.style.top = `${event.clientY - 25}px`;
+            heartHalo.style.left = `${event.clientX - 12}px`;
+            heartHalo.style.top = `${event.clientY - 12}px`;
             
             setTimeout(() => {
                 heartHalo.remove();
