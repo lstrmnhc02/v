@@ -96,39 +96,52 @@ button {
 }
 
 .heart-halo {
-    position: absolute;
-    width: 50px;
-    height: 50px;
-    background: transparent;
-    border: 3px solid pink;
-    box-shadow: 0 0 10px #ff69b4, 0 0 20px #ff69b4;
-    animation: heartHalo 1.5s ease-out forwards;
-    pointer-events: none;
-    transform: rotate(-45deg);
-}
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background: transparent;
+            border: 3px solid pink;
+            box-shadow: 0 0 15px #ff69b4;
+            animation: heartHalo 1.5s ease-out forwards;
+            pointer-events: none;
+            transform: rotate(-45deg);
+        }
 
-.heart-halo::before,
-.heart-halo::after {
-    content: '';
-    position: absolute;
-    width: 50px;
-    height: 50px;
-    background: transparent;
-    border: 3px solid pink;
-    box-shadow: inherit;
-    border-radius: 50%;
-}
+        .heart-halo::before,
+        .heart-halo::after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            border: 3px solid pink;
+            box-shadow: inherit;
+            border-radius: 50%;
+        }
 
-.heart-halo::before {
-    top: -25px;
-    left: 0;
-}
+        .heart-halo::before {
+            top: -25px;
+            left: 0;
+        }
 
-.heart-halo::after {
-    left: 25px;
-    top: 0;
-}
-
+        .heart-halo::after {
+            left: 25px;
+            top: 0;
+        }
+    </style>
+<script>
+        document.addEventListener("click", function(event) {
+            const heartHalo = document.createElement("div");
+            heartHalo.classList.add("heart-halo");
+            document.body.appendChild(heartHalo);
+            
+            heartHalo.style.left = `${event.clientX - 25}px`;
+            heartHalo.style.top = `${event.clientY - 25}px`;
+            
+            setTimeout(() => {
+                heartHalo.remove();
+            }, 1500); // Remove after animation ends
+        });
+    </script>
 
 
 /* 🔹 Mobile Optimization */
