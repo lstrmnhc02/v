@@ -94,3 +94,43 @@ button {
         padding: 10px 18px;
     }
 }
+
+.greetings {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    max-width: 90%;
+    line-height: 1; /* Reduce space between lines */
+}
+
+.greetings span {
+    display: inline-block;
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #ff69b4;
+    text-shadow: 0 0 12px #ff69b4, 0 0 50px #ff69b4, 0 0 100px #ff69b4;
+    animation: glow 2.5s ease-in-out infinite;
+    margin: 5px; /* Adjust spacing between letters */
+}
+
+/* First 6 letters on the first row */
+.greetings span:nth-child(-n+6) {
+    flex: 1;
+    max-width: 10%;
+}
+
+/* Rest of the letters on the second row */
+.greetings span:nth-child(n+7) {
+    flex: 1;
+    max-width: 10%;
+}
+
+/* Responsive Design - Adjust spacing for smaller screens */
+@media screen and (max-width: 574px) {
+    .greetings span {
+        font-size: 2rem; /* Reduce size for mobile */
+        margin: 3px;
+    }
+}
+
