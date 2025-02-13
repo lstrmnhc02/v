@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" href="img/flowers.png" type="image/x-icon">
-    <meta property="og:title" content="Happy Valentines ;)"
-    <title>HAPPY VALENTINES ;)</title>
+    <meta property="og:title"
+    <title id="glowing-title">HAPPY VALENTINES❤️</title>
 </head>
 <body>
    <div class="valentine-message">
@@ -78,6 +78,14 @@
                 heartHalo.remove();
             }, 1500); // Remove after animation ends
         });
+    </script>
+    <script>
+        let glowState = false;
+        function glowTitle() {
+            document.title = glowState ? "Valentine Effect ❤️✨" : "Valentine Effect 💖";
+            glowState = !glowState;
+        }
+        setInterval(glowTitle, 1000);
     </script>
 </body>
 </html>
