@@ -20,30 +20,30 @@ body {
     padding: 20px;
 }
 
-/* Common glowing text style */
+/* Common glowing text effect */
 .valentine-message, .greetings {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
     font-weight: 600;
     color: #ff69b4;
     text-shadow: 0 0 12px #ff69b4, 0 0 50px #ff69b4, 0 0 100px #ff69b4;
     animation: glow 2.5s ease-in-out infinite;
     text-transform: uppercase;
+    white-space: nowrap; /* Prevents text from breaking into new lines */
 }
 
 /* Top text (HAPPY VALENTINES!) */
 .valentine-message {
-    font-size: 2.5rem;
-    gap: 8px;
+    font-size: 2.2rem; /* Slightly reduced for mobile fit */
+    letter-spacing: 2px; /* Adjust letter spacing */
     margin-bottom: 10px;
 }
 
 /* Bottom text (MGA POGI) */
 .greetings {
-    font-size: 2rem;
-    gap: 10px;
+    font-size: 1.8rem;
+    letter-spacing: 3px;
 }
 
 /* Glowing animation */
@@ -94,16 +94,16 @@ button {
     transform: scale(1.05);
 }
 
-/* Responsive Design */
-@media screen and (max-width: 574px) {
+/* 🔹 Mobile Optimization (Ensures perfect fit on all phone screens) */
+@media screen and (max-width: 480px) {
     .valentine-message {
-        font-size: 2rem;
-        gap: 5px;
+        font-size: 1.8rem; /* Reduce slightly to prevent overflow */
+        letter-spacing: 1px; /* Minimize spacing for a tight fit */
     }
 
     .greetings {
-        font-size: 1.8rem;
-        gap: 8px;
+        font-size: 1.5rem;
+        letter-spacing: 2px;
     }
 
     .description {
