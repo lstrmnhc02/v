@@ -28,38 +28,57 @@
         
     </div>
 
+    <style>
+        @keyframes heartHalo {
+            0% {
+                transform: scale(0.5);
+                opacity: 1;
+            }
+            50% {
+                transform: scale(1.2);
+                opacity: 0.8;
+            }
+            100% {
+                transform: scale(1.8);
+                opacity: 0;
+            }
+        }
+
+        .heart-halo {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background: transparent;
+            border: 3px solid pink;
+            border-radius: 50%;
+            box-shadow: 0 0 10px #ff69b4, 0 0 20px #ff69b4;
+            animation: heartHalo 1.5s ease-out forwards;
+            pointer-events: none;
+            clip-path: path("M 25 5 C 35 -10, 60 5, 25 45 C -10 5, 15 -10, 25 5");
+        }
+    </style>
+</head>
+<body>
+    <div class="valentine-message">HAPPY VALENTINES!</div>
+    <div class="greetings">MGA POGI</div>
+    <div class="description">Click anywhere to create a glowing heart halo effect!</div>
     <script>
         document.addEventListener("click", function(event) {
-            const heart = document.createElement("div");
-            heart.classList.add("heart");
-            document.body.appendChild(heart);
+            const heartHalo = document.createElement("div");
+            heartHalo.classList.add("heart-halo");
+            document.body.appendChild(heartHalo);
             
-            heart.style.left = `${event.clientX}px`;
-            heart.style.top = `${event.clientY}px`;
+            heartHalo.style.left = `${event.clientX - 25}px`;
+            heartHalo.style.top = `${event.clientY - 25}px`;
             
             setTimeout(() => {
-                heart.remove();
-            }, 1000); // Remove heart after animation
+                heartHalo.remove();
+            }, 1500); // Remove after animation ends
         });
     </script>
+</body>
+</html>
 
-<script>
-    document.addEventListener("click", function(event) {
-        const heart = document.createElement("div");
-        heart.classList.add("click-heart");
-        
-        // Set position where the user clicked
-        heart.style.left = `${event.clientX}px`;
-        heart.style.top = `${event.clientY}px`;
-        
-        document.body.appendChild(heart);
-
-        // Remove the heart after animation ends
-        setTimeout(() => {
-            heart.remove();
-        }, 1500);
-    });
-</script>
 
 </body>
 </html>
