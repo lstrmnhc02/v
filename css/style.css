@@ -18,8 +18,7 @@ body {
     background-color: black;
     text-align: center;
     padding: 20px;
-    position: relative;
-    overflow: hidden; /* Prevents scroll due to animations */
+    overflow: hidden;
 }
 
 /* Common glowing text effect */
@@ -32,13 +31,13 @@ body {
     text-shadow: 0 0 12px #ff69b4, 0 0 50px #ff69b4, 0 0 100px #ff69b4;
     animation: glow 2.5s ease-in-out infinite;
     text-transform: uppercase;
-    white-space: nowrap; /* Prevents text from breaking into new lines */
+    white-space: nowrap;
 }
 
 /* Top text (HAPPY VALENTINES!) */
 .valentine-message {
-    font-size: 2.2rem; /* Slightly reduced for mobile fit */
-    letter-spacing: 2px; /* Adjust letter spacing */
+    font-size: 2.2rem;
+    letter-spacing: 2px;
     margin-bottom: 10px;
 }
 
@@ -96,82 +95,6 @@ button {
     transform: scale(1.05);
 }
 
-/* 🔹 Floating Hearts Background */
-.hearts-container {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    overflow: hidden;
-    pointer-events: none;
-}
-
-/* Heart Animation */
-.heart {
-    position: absolute;
-    font-size: 20px;
-    color: #ff69b4;
-    opacity: 0;
-    animation: floatHearts 6s linear infinite, glowFade 6s ease-in-out infinite;
-}
-
-/* Heart Glow Effect */
-@keyframes glowFade {
-    0% {
-        text-shadow: 0 0 5px #ff69b4, 0 0 10px #ff69b4;
-        opacity: 0;
-    }
-    50% {
-        text-shadow: 0 0 15px #ff69b4, 0 0 30px #ff69b4;
-        opacity: 1;
-    }
-    100% {
-        text-shadow: 0 0 5px #ff69b4, 0 0 10px #ff69b4;
-        opacity: 0;
-    }
-}
-
-/* Floating Upwards Effect */
-@keyframes floatHearts {
-    0% {
-        transform: translateY(50vh) scale(0.5);
-    }
-    50% {
-        transform: translateY(-10vh) scale(1);
-    }
-    100% {
-        transform: translateY(-50vh) scale(1.5);
-        opacity: 0;
-    }
-}
-
-/* 🔹 Mobile Optimization (Ensures perfect fit on all phone screens) */
-@media screen and (max-width: 480px) {
-    .valentine-message {
-        font-size: 1.8rem; /* Reduce slightly to prevent overflow */
-        letter-spacing: 1px; /* Minimize spacing for a tight fit */
-    }
-
-    .greetings {
-        font-size: 1.5rem;
-        letter-spacing: 2px;
-    }
-
-    .description {
-        font-size: 0.9rem;
-        max-width: 90%;
-    }
-
-    .button a {
-        font-size: 0.9rem;
-        padding: 10px 18px;
-    }
-
-    .heart {
-        font-size: 16px;
-    }
-
 /* Clickable Heart Effect */
 .click-heart {
     position: absolute;
@@ -180,7 +103,7 @@ button {
     text-shadow: 0 0 5px #ff69b4, 0 0 15px #ff69b4, 0 0 30px #ff69b4;
     transform: scale(0);
     opacity: 1;
-    pointer-events: none; /* Prevents interfering with other clicks */
+    pointer-events: none;
     animation: heartBurst 1.5s ease-out forwards;
 }
 
@@ -203,4 +126,25 @@ button {
     }
 }
 
+/* 🔹 Mobile Optimization */
+@media screen and (max-width: 480px) {
+    .valentine-message {
+        font-size: 1.8rem;
+        letter-spacing: 1px;
+    }
+
+    .greetings {
+        font-size: 1.5rem;
+        letter-spacing: 2px;
+    }
+
+    .description {
+        font-size: 0.9rem;
+        max-width: 90%;
+    }
+
+    .button a {
+        font-size: 0.9rem;
+        padding: 10px 18px;
+    }
 }
