@@ -22,11 +22,22 @@ body {
 
 /* Glowing Text Effect */
 .greetings {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    max-width: 90%;
+    line-height: 1; /* Reduce space between rows */
+}
+
+.greetings span {
+    display: inline-block;
     font-size: 2.5rem;
     font-weight: 600;
     color: #ff69b4;
     text-shadow: 0 0 12px #ff69b4, 0 0 50px #ff69b4, 0 0 100px #ff69b4;
     animation: glow 2.5s ease-in-out infinite;
+    margin: 5px; /* Space between letters */
 }
 
 /* Slow glowing effect */
@@ -37,6 +48,18 @@ body {
     50% {
         text-shadow: 0 0 5px #ff69b4, 0 0 20px #ff69b4, 0 0 40px #ff69b4;
     }
+}
+
+/* First 6 letters on top row */
+.greetings span:nth-child(-n+6) {
+    flex: 1;
+    max-width: 10%;
+}
+
+/* Remaining letters on second row */
+.greetings span:nth-child(n+7) {
+    flex: 1;
+    max-width: 10%;
 }
 
 /* Description - Softer look for readability */
@@ -61,13 +84,13 @@ body {
     transition: all 0.3s ease-in-out;
     box-shadow: 0 0 10px #ff69b4;
     font-weight: 600;
-    border: none;  /* Remove any unwanted borders */
-    outline: none; /* Remove focus outline */
+    border: none;
+    outline: none;
 }
 
 /* REMOVE DEFAULT BUTTON STYLE (if using <button>) */
 button {
-    all: unset;  /* Completely resets any default button styles */
+    all: unset;
     cursor: pointer;
 }
 
@@ -78,12 +101,13 @@ button {
     transform: scale(1.05);
 }
 
-/* Responsive Design */
+/* Responsive Design - Adjust spacing for smaller screens */
 @media screen and (max-width: 574px) {
-    .greetings {
-        font-size: 2rem;
+    .greetings span {
+        font-size: 2rem; /* Reduce size for mobile */
+        margin: 3px;
     }
-
+    
     .description {
         font-size: 0.9rem;
         max-width: 90%;
@@ -94,43 +118,3 @@ button {
         padding: 10px 18px;
     }
 }
-
-.greetings {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    text-align: center;
-    max-width: 90%;
-    line-height: 1; /* Reduce space between lines */
-}
-
-.greetings span {
-    display: inline-block;
-    font-size: 2.5rem;
-    font-weight: 600;
-    color: #ff69b4;
-    text-shadow: 0 0 12px #ff69b4, 0 0 50px #ff69b4, 0 0 100px #ff69b4;
-    animation: glow 2.5s ease-in-out infinite;
-    margin: 5px; /* Adjust spacing between letters */
-}
-
-/* First 6 letters on the first row */
-.greetings span:nth-child(-n+6) {
-    flex: 1;
-    max-width: 10%;
-}
-
-/* Rest of the letters on the second row */
-.greetings span:nth-child(n+7) {
-    flex: 1;
-    max-width: 10%;
-}
-
-/* Responsive Design - Adjust spacing for smaller screens */
-@media screen and (max-width: 574px) {
-    .greetings span {
-        font-size: 2rem; /* Reduce size for mobile */
-        margin: 3px;
-    }
-}
-
