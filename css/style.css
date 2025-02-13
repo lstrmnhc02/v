@@ -41,12 +41,12 @@ body {
     animation: glow-pink 2.5s ease-in-out infinite;
 }
 
-/* Bottom text (MGA POGI) - Now Light Blue */
+/* Bottom text (MGA POGI) - Now Cyan Blue */
 .greetings {
     font-size: 1.8rem;
     letter-spacing: 3px;
-    color: #ADD8E6; /* Light blue */
-    text-shadow: 0 0 12px #ADD8E6, 0 0 50px #ADD8E6, 0 0 100px #ADD8E6;
+    color: #00bfff; /* Cyan Blue */
+    text-shadow: 0 0 12px #00bfff, 0 0 50px #00bfff, 0 0 100px #00bfff;
     animation: glow-blue 2.5s ease-in-out infinite;
 }
 
@@ -60,13 +60,13 @@ body {
     }
 }
 
-/* Glowing animation for blue */
+/* Glowing animation for cyan blue */
 @keyframes glow-blue {
     0%, 100% {
-        text-shadow: 0 0 12px #ADD8E6, 0 0 50px #ADD8E6, 0 0 100px #ADD8E6;
+        text-shadow: 0 0 12px #00bfff, 0 0 50px #00bfff, 0 0 100px #00bfff;
     }
     50% {
-        text-shadow: 0 0 5px #ADD8E6, 0 0 20px #ADD8E6, 0 0 40px #ADD8E6;
+        text-shadow: 0 0 5px #00bfff, 0 0 20px #00bfff, 0 0 40px #00bfff;
     }
 }
 
