@@ -49,7 +49,7 @@ body {
     line-height: 1.6;
 }
 
-/* Button - No borders, smooth glowing effect */
+/* BUTTON - FIXED WHITE RECTANGLE ISSUE */
 .button a {
     display: inline-block;
     text-decoration: none;
@@ -61,8 +61,14 @@ body {
     transition: all 0.3s ease-in-out;
     box-shadow: 0 0 10px #ff69b4;
     font-weight: 600;
-    border: none; /* Removes any default border */
-    outline: none; /* Removes focus outline */
+    border: none;  /* Remove any unwanted borders */
+    outline: none; /* Remove focus outline */
+}
+
+/* REMOVE DEFAULT BUTTON STYLE (if using <button>) */
+button {
+    all: unset;  /* Completely resets any default button styles */
+    cursor: pointer;
 }
 
 /* Button Hover Effect */
