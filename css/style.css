@@ -20,16 +20,17 @@ body {
     padding: 20px;
 }
 
-/* Glowing Text Effect */
+/* Greeting text container */
 .greetings {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     text-align: center;
     max-width: 90%;
-    line-height: 1; /* Reduce space between rows */
+    line-height: 1.1; /* Reduce space between rows */
 }
 
+/* Style for each letter */
 .greetings span {
     display: inline-block;
     font-size: 2.5rem;
@@ -37,10 +38,10 @@ body {
     color: #ff69b4;
     text-shadow: 0 0 12px #ff69b4, 0 0 50px #ff69b4, 0 0 100px #ff69b4;
     animation: glow 2.5s ease-in-out infinite;
-    margin: 5px; /* Space between letters */
+    margin: 2px; /* Reduce spacing */
 }
 
-/* Slow glowing effect */
+/* Glowing effect */
 @keyframes glow {
     0%, 100% {
         text-shadow: 0 0 12px #ff69b4, 0 0 50px #ff69b4, 0 0 100px #ff69b4;
@@ -50,19 +51,19 @@ body {
     }
 }
 
-/* First 6 letters on top row */
-.greetings span:nth-child(-n+6) {
+/* "MGA POGI" on top row */
+.greetings span:nth-child(-n+8) {
+    flex: 1;
+    max-width: 12%;
+}
+
+/* "HAPPY VALENTINES" on bottom row */
+.greetings span:nth-child(n+9) {
     flex: 1;
     max-width: 10%;
 }
 
-/* Remaining letters on second row */
-.greetings span:nth-child(n+7) {
-    flex: 1;
-    max-width: 10%;
-}
-
-/* Description - Softer look for readability */
+/* Description Styling */
 .description {
     font-size: 1rem;
     max-width: 80%;
@@ -72,7 +73,7 @@ body {
     line-height: 1.6;
 }
 
-/* BUTTON - FIXED WHITE RECTANGLE ISSUE */
+/* BUTTON */
 .button a {
     display: inline-block;
     text-decoration: none;
@@ -88,12 +89,6 @@ body {
     outline: none;
 }
 
-/* REMOVE DEFAULT BUTTON STYLE (if using <button>) */
-button {
-    all: unset;
-    cursor: pointer;
-}
-
 /* Button Hover Effect */
 .button a:hover {
     background: #ff85c2;
@@ -101,11 +96,11 @@ button {
     transform: scale(1.05);
 }
 
-/* Responsive Design - Adjust spacing for smaller screens */
+/* Responsive Design for Mobile */
 @media screen and (max-width: 574px) {
     .greetings span {
-        font-size: 2rem; /* Reduce size for mobile */
-        margin: 3px;
+        font-size: 2rem; /* Reduce text size for mobile */
+        margin: 2px;
     }
     
     .description {
