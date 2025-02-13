@@ -37,6 +37,23 @@
     <span class="heart" style="top: 88%; left: 90%; animation-delay: 4s;">❤️</span>
 </div>
 
+<script>
+    document.addEventListener("click", function(event) {
+        const heart = document.createElement("div");
+        heart.classList.add("click-heart");
+        
+        // Set position where the user clicked
+        heart.style.left = `${event.clientX}px`;
+        heart.style.top = `${event.clientY}px`;
+        
+        document.body.appendChild(heart);
+
+        // Remove the heart after animation ends
+        setTimeout(() => {
+            heart.remove();
+        }, 1500);
+    });
+</script>
 
 </body>
 </html>
