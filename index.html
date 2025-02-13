@@ -45,38 +45,24 @@
 
         .heart-halo {
             position: absolute;
-            width: 24px;
-            height: 24px;
+            width: 50px;
+            height: 50px;
             background: transparent;
-            border: 3px solid pink;
-            box-shadow: 0 0 15px #ff69b4;
             animation: heartHalo 1.5s ease-out forwards;
             pointer-events: none;
-            transform: rotate(-45deg);
-        }
-
-        .heart-halo::before,
-        .heart-halo::after {
-            content: '';
-            position: absolute;
-            width: 24px;
-            height: 24px;
-            border: 3px solid pink;
-            box-shadow: inherit;
-            border-radius: 50%;
         }
 
         .heart-halo::before {
-            top: -12px;
+            content: '\2665';
+            position: absolute;
+            font-size: 50px;
+            color: pink;
+            text-shadow: 0 0 10px #ff69b4, 0 0 20px #ff69b4, 0 0 30px #ff69b4;
             left: 0;
-        }
-
-        .heart-halo::after {
-            left: 12px;
             top: 0;
+            transform: translate(-50%, -50%);
         }
     </style>
-
 
    <script>
         document.addEventListener("click", function(event) {
@@ -84,8 +70,8 @@
             heartHalo.classList.add("heart-halo");
             document.body.appendChild(heartHalo);
             
-            heartHalo.style.left = `${event.clientX - 12}px`;
-            heartHalo.style.top = `${event.clientY - 12}px`;
+            heartHalo.style.left = `${event.clientX}px`;
+            heartHalo.style.top = `${event.clientY}px`;
             
             setTimeout(() => {
                 heartHalo.remove();
