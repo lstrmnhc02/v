@@ -1,7 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;1,900&display=swap');
 
 * {
-    font-family: 'Poppins', cursive;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
@@ -13,10 +16,13 @@ body {
     align-items: center;
     justify-content: center;
     background-color: black;
+    text-align: center;
+    padding: 20px;
 }
 
+/* Glowing Text Effect */
 .greetings {
-    font-size: 2rem;
+    font-size: 2.5rem;
     font-weight: 600;
     color: #ff69b4; /* Pink color */
     text-shadow: 0 0 12px #ff69b4, 0 0 50px #ff69b4, 0 0 100px #ff69b4;
@@ -33,34 +39,50 @@ body {
     }
 }
 
+/* Description - Softer look for readability */
 .description {
     font-size: 1rem;
+    max-width: 80%;
+    margin-top: 10px;
     margin-bottom: 20px;
+    color: #d3d3d3; /* Light gray for a soft look */
+    line-height: 1.6;
 }
 
+/* Button - Smooth, user-friendly design */
 .button a {
+    display: inline-block;
     text-decoration: none;
     font-size: 1rem;
-    color: red;
+    color: white;
+    background: #ff69b4;
+    padding: 12px 20px;
+    border-radius: 25px;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 0 10px #ff69b4;
+    font-weight: 600;
 }
 
+/* Button Hover Effect */
+.button a:hover {
+    background: #ff85c2;
+    box-shadow: 0 0 15px #ff85c2;
+    transform: scale(1.05);
+}
+
+/* Responsive Design */
 @media screen and (max-width: 574px) {
     .greetings {
-        display: block;
-        font-size: 1.8rem;
-        font-weight: 600;
-        text-align: center;
+        font-size: 2rem;
     }
 
     .description {
-        font-size: 5px;
+        font-size: 0.9rem;
+        max-width: 90%;
     }
 
     .button a {
-        font-size: 10px;
-    }
-
-    .button {
-        margin: 5px 4px 6px 5px;
+        font-size: 0.9rem;
+        padding: 10px 18px;
     }
 }
