@@ -26,7 +26,6 @@ body {
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    gap: 10px;
     font-weight: 600;
     color: #ff69b4;
     text-shadow: 0 0 12px #ff69b4, 0 0 50px #ff69b4, 0 0 100px #ff69b4;
@@ -34,15 +33,16 @@ body {
     text-transform: uppercase;
 }
 
-/* Specific styling for the first greeting (MGA POGI) */
+/* First Greeting (MGA POGI) */
 .greetings {
     font-size: 2.5rem;
+    gap: 10px;
 }
 
-/* Specific styling for the second greeting (HAPPY VALENTINES) - compressed */
+/* Second Greeting (""HAPPY VALENTINES!"") - Slightly compressed */
 .valentine-message {
-    font-size: 2rem;
-    gap: 5px; /* Smaller spacing to fit more letters */
+    font-size: 1.9rem;
+    gap: 4px; /* Reduce space to fit better */
     margin-top: 10px;
 }
 
@@ -101,7 +101,8 @@ button {
     }
 
     .valentine-message {
-        font-size: 1.8rem;
+        font-size: 1.7rem; /* Slightly smaller on very small screens */
+        gap: 3px; /* Minimize spacing further */
     }
 
     .description {
