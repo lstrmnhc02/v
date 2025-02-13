@@ -28,14 +28,20 @@
         
     </div>
 
-    <div class="hearts-container">
-    <!-- Randomly positioned hearts -->
-    <span class="heart" style="top: 80%; left: 10%; animation-delay: 0s;">❤️</span>
-    <span class="heart" style="top: 90%; left: 30%; animation-delay: 1s;">❤️</span>
-    <span class="heart" style="top: 85%; left: 50%; animation-delay: 2s;">❤️</span>
-    <span class="heart" style="top: 75%; left: 70%; animation-delay: 3s;">❤️</span>
-    <span class="heart" style="top: 88%; left: 90%; animation-delay: 4s;">❤️</span>
-</div>
+    <script>
+        document.addEventListener("click", function(event) {
+            const heart = document.createElement("div");
+            heart.classList.add("heart");
+            document.body.appendChild(heart);
+            
+            heart.style.left = `${event.clientX}px`;
+            heart.style.top = `${event.clientY}px`;
+            
+            setTimeout(() => {
+                heart.remove();
+            }, 1000); // Remove heart after animation
+        });
+    </script>
 
 <script>
     document.addEventListener("click", function(event) {
